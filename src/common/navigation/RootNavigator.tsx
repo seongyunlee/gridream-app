@@ -12,8 +12,10 @@ export default function RootNavigator() {
 
   return (
     <Stack.Navigator
+        initialRouteName={initialRouteName}
+        screenOptions={{headerShown: false}}
     >
-      <Stack.Screen name="Tab" component={HomeMain} />
+      <Stack.Screen name="Tab" component={TabNavigation} options={{headerShown: true}} />
     </Stack.Navigator>
   );
 }

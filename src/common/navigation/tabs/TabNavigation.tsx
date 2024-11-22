@@ -11,6 +11,7 @@ export function TabNavigation() {
   const Tab = createBottomTabNavigator();
   return (
     <Tab.Navigator
+        initialRouteName={"Home"}
       screenOptions={{
         header: (props: BottomTabHeaderProps) => <TabHeader {...props} />,
       }}
