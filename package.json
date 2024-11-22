@@ -10,8 +10,14 @@
     "test": "jest"
   },
   "dependencies": {
+    "@react-navigation/bottom-tabs": "^7.0.7",
+    "@react-navigation/native": "^7.0.4",
+    "@react-navigation/native-stack": "^7.1.1",
+    "@react-navigation/stack": "^7.0.6",
     "react": "18.3.1",
-    "react-native": "0.76.3"
+    "react-native": "0.76.3",
+    "styled-component": "^2.8.0",
+    "styled-components": "^6.1.13"
   },
   "devDependencies": {
     "@babel/core": "^7.25.2",
@@ -35,5 +41,8 @@
   },
   "engines": {
     "node": ">=18"
-  }
+  },
+  "main": "index.js",
+  "author": "seongyunlee <private.seongyun@gmail.com>",
+  "license": "MIT"
 }
