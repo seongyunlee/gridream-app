@@ -1,9 +1,10 @@
-import {RootStackParamList} from "./types";
-import {createNativeStackNavigator} from "@react-navigation/native-stack";
 import {TabNavigation} from "./tabs/TabNavigation.tsx";
 import NotFoundScreen from "./NotFoundScreen.tsx";
+import {HomeMain} from "../../pages/home/HomeMain.tsx";
+import {createStackNavigator} from "@react-navigation/stack";
+import {RootStackParamList} from "./types";
 
-const Stack = createNativeStackNavigator<RootStackParamList>();
+const Stack = createStackNavigator<RootStackParamList>();
 
 
 export default function RootNavigator() {
@@ -11,11 +12,8 @@ export default function RootNavigator() {
 
   return (
     <Stack.Navigator
-      initialRouteName={initialRouteName}
-      screenOptions={{ headerShown: false }}
     >
-      <Stack.Screen name="Tab" component={TabNavigation} />
-      <Stack.Screen name="NotFound" component={NotFoundScreen} />
+      <Stack.Screen name="Tab" component={HomeMain} />
     </Stack.Navigator>
   );
 }
