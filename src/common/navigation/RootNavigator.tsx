@@ -15,7 +15,7 @@ export default function RootNavigator() {
         initialRouteName={initialRouteName}
         screenOptions={{headerShown: false}}
     >
-      <Stack.Screen name="Tab" component={TabNavigation} options={{headerShown: true}} />
+      <Stack.Screen name="Tab" component={TabNavigation} />
     </Stack.Navigator>
   );
 }

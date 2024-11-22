@@ -1,12 +1,12 @@
-import {BottomTabHeaderProps} from "@react-navigation/bottom-tabs";
-import styled from "styled-components/native";
-import Colors from "../../theme/Colors.ts";
-import LogoImg from "../../../assets/images/logo.svg";
+import {BottomTabHeaderProps} from '@react-navigation/bottom-tabs';
+import styled from 'styled-components/native';
+import Colors from '../../theme/Colors.ts';
+import Gridream from '../../../assets/images/2x/Gridream.png';
 
 export function TabHeader(props: BottomTabHeaderProps) {
   return (
     <HeaderContainer>
-      <Logo />
+      <Logo source={Gridream} resizeMode="contain" />
     </HeaderContainer>
   );
 }
@@ -16,11 +16,12 @@ const HeaderContainer = styled.View`
   justify-content: space-between;
   align-items: center;
   padding: 10px;
-  background-color: ${Colors.gray};
+  height: 60px;
+  backgroud-color: ${Colors.white};
 `;
 
-const Logo = styled.View`
-  width: 100px;
-  height: 30px;
-    background-image: url(${LogoImg});
-`
+const Logo = styled.ImageBackground`
+  width: 128px;
+  height: 24px;
+  background-size: cover;
+`;
