@@ -1,7 +1,7 @@
 import {
   NativeStackNavigationProp,
   NativeStackScreenProps,
-} from "@react-navigation/native-stack";
+} from '@react-navigation/native-stack';
 
 declare global {
   // eslint-disable-next-line @typescript-eslint/no-namespace
@@ -13,6 +13,7 @@ declare global {
 
 export type RootStackParamList = {
   Tab: undefined;
+  Write: undefined;
   NotFound: undefined;
 };
 

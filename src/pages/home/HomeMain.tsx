@@ -28,6 +28,5 @@ const MandartContainer = styled.View`
 const HomeMainContainer = styled.View`
   flex: 1;
   align-items: center;
-  margin-top: 15px;
   background-color: ${Colors.white};
 `;

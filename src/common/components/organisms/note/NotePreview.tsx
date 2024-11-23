@@ -1,7 +1,20 @@
 import styled from 'styled-components/native';
 import Colors from '../../../theme/Colors.ts';
 import {Text} from 'react-native';
-const NotePreview = () => {
+import React from 'react';
+import {ReactionBar} from './components/ReactionBar.tsx';
+
+interface NotePreviewState {
+  isLiked: boolean;
+  isLocked: boolean;
+  contentImg: string;
+  title: string;
+  date: string;
+  LikeCount: number;
+}
+const NotePreview = (props: NotePreviewState) => {
+  const [isLiked, setIsLiked] = React.useState(props.isLiked);
+
   return (
     <PreviewContainer>
       <HeaderContainer>
@@ -19,14 +32,21 @@ const NotePreview = () => {
           </TitleTextContainer>
         </TitleContainer>
       </HeaderContainer>
-      <ContentImage
-        source={require('../../../../assets/images/mock/running.png')}
+      <ImageContainer>
+        <ContentImage
+          source={require('../../../../assets/images/mock/running.png')}
+        />
+      </ImageContainer>
+      <ReactionBar
+        isLiked={isLiked}
+        isLocked={false}
+        setIsLiked={setIsLiked}
+        likeCount={props.LikeCount}
       />
     </PreviewContainer>
   );
 };
 const PreviewContainer = styled.View`
-  flex: 1;
   align-items: center;
   background-color: ${Colors.white};
 `;
@@ -54,17 +74,27 @@ const IconContainer = styled.View`
   align-items: center;
   justify-content: center;
 `;
+//cover
 const ContentImage = styled.Image`
-  width: 40px;
-  padding: 20px;
+  width: 100% !important;
+  height: 100% !important;
+  background-size: cover;
   border-radius: 10px;
-  aspect-ratio: 1;
   border: 2px solid ${Colors.lightGray};
 `;
 const ContentText = styled.Text`
   font-size: 16px;
   flex: 1;
   height: 30px;
+`;
+const ImageContainer = styled.View`
+  display: flex;
+  align-items: center;
+  width: 100%;
+  aspect-ratio: 1;
+  padding: 0px 20px;
+  box-sizing: border-box;
+  background-color: ${Colors.white};
 `;
 
 export default NotePreview;
