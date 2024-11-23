@@ -3,14 +3,18 @@ import styled from 'styled-components/native';
 import Mandart from '../../common/components/organisms/mandart/Mandart.tsx';
 import Colors from '../../common/theme/Colors.ts';
 import NotePreview from '../../common/components/organisms/note/NotePreview.tsx';
+import {ScrollView} from 'react-native';
 
 export const HomeMain = () => {
   return (
     <HomeMainContainer>
-      <MandartContainer>
-        <Mandart />
-      </MandartContainer>
-      <NotePreview />
+      <ScrollView style={{width: '100%'}}>
+        <MandartContainer>
+          <Mandart />
+        </MandartContainer>
+        <NotePreview />
+        <NotePreview />
+      </ScrollView>
     </HomeMainContainer>
   );
 };
@@ -18,7 +22,8 @@ export const HomeMain = () => {
 const MandartContainer = styled.View`
   width: 100%;
   aspect-ratio: 1;
-  padding: 0 10px 20px 10px;
+  padding: 10px 10px;
+  background-color: ${Colors.lightGray};
 `;
 const HomeMainContainer = styled.View`
   flex: 1;
